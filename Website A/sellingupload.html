@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="upload-container">
+    <h2>Upload Your Products</h2>
+
+    <!-- Product Upload Form -->
+    <form id="productForm">
+      
+      <div class="product-entry">
+        <label for="productName1">Product Name</label>
+        <input type="text" id="productName1" name="productName[]" placeholder="Enter product name" required>
+        
+        <label for="productPrice1">Estimated Price</label>
+        <input type="number" id="productPrice1" name="productPrice[]" placeholder="Enter price" required>
+        
+        <label for="productDescription1">Product Description</label>
+        <textarea id="productDescription1" name="productDescription[]" rows="3" placeholder="Enter product description" required></textarea>
+        
+        <label for="productImage1">Upload Product Image</label>
+        <input type="file" id="productImage1" name="productImage[]" accept="image/*">
+      </div>
+
+      <button type="button" id="addProductBtn" class="add-btn">+ Add Another Product</button>
+      <button type="submit" class="submit-btn">Submit Products</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

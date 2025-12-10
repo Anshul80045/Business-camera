@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: #0d6efd;
+            padding: 15px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .search-container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .search-container button {
+            padding: 12px 20px;
+            border: none;
+            background: #0d6efd;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .results {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .result-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Search Products</div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for products..." />
+        <button onclick="searchNow()">Search</button>
+    </div>
+
+    <div class="results" id="results"></div>
+
+    <script>
+        function searchNow() {
+            const query = document.getElementById("searchInput").value;
+
+            const results = document.getElementById("results");
+            results.innerHTML = "";
+
+            if (query.trim() === "") {
+                results.innerHTML = "<p>Please enter something to search.</p>";
+                return;
+            }
+
+            const demoProducts = [
+                { name: "Blue T-Shirt", category: "Men Fashion" },
+                { name: "Pink Kurti", category: "Women Fashion" },
+                { name: "Smart Watch", category: "Electronics" },
+                { name: "Sports Shoes", category: "Footwear" }
+            ];
+
+            const filtered = demoProducts.filter(p => 
+                p.name.toLowerCase().includes(query.toLowerCase())
+            );
+
+            if (filtered.length === 0) {
+                results.innerHTML = "<p>No results found.</p>";
+                return;
+            }
+
+            filtered.forEach(item => {
+                const div = document.createElement("div");
+                div.className = "result-item";
+                div.innerHTML = `<strong>${item.name}</strong><br><small>${item.category}</small>`;
+                results.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>
