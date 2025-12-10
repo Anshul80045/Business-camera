@@ -354,6 +354,9 @@ body {
 }
 
 @media (max-width: 600px) {
+    .search-box{
+        display: flexbox;
+    }
   .mobile-footer {
     position: fixed;
     bottom: 0;
@@ -418,6 +421,8 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    
+    
     .hero {
         height: 60vh;
     }
@@ -492,7 +497,7 @@ body {
      .four-sections {
         grid-template-columns: repeat(1, 1fr);
         position: absolute;
-        bottom: -1650px;
+        bottom: -1500px;
     }
 
     .home-box h3 {
@@ -501,6 +506,43 @@ body {
 
 }
 
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .four-sections {
+        grid-template-columns: repeat(1, 1fr);
+        position: absolute;
+        bottom: -1600px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+     .four-sections {
+        grid-template-columns: repeat(1, 1fr);
+        position: absolute;
+        bottom: -1600px;
+    }
+}
 
 @keyframes typing {
   from { width: 0 }
