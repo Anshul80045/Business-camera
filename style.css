@@ -16,7 +16,7 @@ body {
   height: 50px;
    animation: blurIn 1.5s ease-out forwards;
    position: relative;
-   left: -5px;
+   left: -20px;
     opacity: 0;
     filter: blur(10px);
 }
@@ -241,7 +241,7 @@ body {
 }
 /* HIDE MENU ICON FOR DESKTOP */
 #openSidebar {
-    display: none;
+    display: flex;
 }
 /* banner */
 .hero-banner {
@@ -347,6 +347,52 @@ body {
     margin-top: 10px;
     display: inline-block;
 }
+/* footer*/
+/* Hide on big screens */
+.mobile-footer {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .mobile-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 9999;
+  }
+
+  .mobile-footer a {
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .mobile-footer i {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .mobile-footer a:hover {
+    color: #007bff;
+  }
+}
+.search-icon {
+    cursor: pointer;        /* Mouse pointer */
+    pointer-events: auto;   /* Allow clicking */
+    position: absolute;     /* If overlapping input */
+    right: 10px;            /* Adjust position */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;            /* Be on top */
+}
 
 
 /* ANIMATIONS */
@@ -383,7 +429,10 @@ body {
     animation: baselineRight 1.4s ease-out forwards;
     opacity: 0;
 }
-    
+    .hero-banner{
+        position: relative;
+        bottom: -150px;
+    }
 
     .hero-content h1 {
         font-size: 2rem;
@@ -415,7 +464,7 @@ body {
     outline: none;
     transition: 0.3s ease;
     position: relative;
-    bottom: -70px;
+    bottom: -60px;
     left: -130px;
     }
     .header input{
@@ -443,7 +492,7 @@ body {
      .four-sections {
         grid-template-columns: repeat(1, 1fr);
         position: absolute;
-        bottom: -1500px;
+        bottom: -1650px;
     }
 
     .home-box h3 {
